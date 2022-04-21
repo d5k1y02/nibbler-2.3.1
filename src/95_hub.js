@@ -1,5 +1,6 @@
 "use strict";
 
+
 function NewHub() {
 
 	let hub = Object.create(null);
@@ -140,6 +141,7 @@ let hub_props = {
 		this.hoverdraw_div = -1;
 		this.position_change_time = performance.now();
 		fenbox.value = this.tree.node.board.fen(true);
+		classify()
 
 		if (new_game_flag) {
 			this.node_to_clean = null;

@@ -37,6 +37,36 @@ function SortedMoveInfoFromTable(table) {
 		const b_is_best = 1;						// return 1 to sort a to the right
 
 		// Info that hasn't been touched must be worse...
+		let f_a = (a.move.substring(0, 1)).charCodeAt(0)-97;
+		let r_a = 8 - parseInt(a.move.substring(1, 2));
+		let p_t_a = a.board.state[f_a][r_a]
+		let p_t_a_n = 0
+
+		if(p_t_a === 'r' || p_t_a == 'R') p_t_a_n = 1
+		else if(p_t_a === 'n' || p_t_a == 'N') p_t_a_n = 2
+		else if(p_t_a === 'b' || p_t_a == 'B') p_t_a_n = 3
+		else if(p_t_a === 'q' || p_t_a == 'Q') p_t_a_n = 4
+		else if(p_t_a === 'k' || p_t_a == 'K') p_t_a_n = 5
+
+		let f_b = (b.move.substring(0, 1)).charCodeAt(0)-97;
+		let r_b = 8 - parseInt(b.move.substring(1, 2));
+		let p_t_b = b.board.state[f_b][r_b]
+
+		let p_t_b_n = 0
+		if(p_t_b === 'r' || p_t_b == 'R') p_t_b_n = 1
+		else if(p_t_b === 'n' || p_t_b == 'N') p_t_b_n = 2
+		else if(p_t_b === 'b' || p_t_b == 'B') p_t_b_n = 3
+		else if(p_t_b === 'q' || p_t_b == 'Q') p_t_b_n = 4
+		else if(p_t_b === 'k' || p_t_b == 'K') p_t_b_n = 5
+
+
+		if (p_t_a_n === pred && !(p_t_b_n === pred)) {
+			return a_is_best;
+		}
+		if (!(p_t_a_n === pred) && p_t_b_n === pred) {
+			return b_is_best;
+		}
+
 
 		if (a.__touched && !b.__touched) return a_is_best;
 		if (!a.__touched && b.__touched) return b_is_best;

@@ -32,6 +32,7 @@ try {
 // Requires.........................................................
 
 const background = require("./modules/background");
+const classify = require("./modules/classifier");
 const child_process = require("child_process");
 const clipboard = require("electron").clipboard;
 const config_io = require("./modules/config_io");
@@ -58,6 +59,8 @@ let [load_err2, engineconfig] = engineconfig_io.load();
 
 let next_node_id = 1;
 let live_nodes = Object.create(null);
+
+let pred = 0; //classifier prediction value for current position
 
 // Replace the renderer's built-in alert()..........................
 
