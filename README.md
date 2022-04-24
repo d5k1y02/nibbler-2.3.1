@@ -1,3 +1,15 @@
+
+This is a modified version of nibbler for use with my piece type prediction algorithm. You can find the original here: https://github.com/rooklift/nibbler
+
+
+
+
+
+
+
+
+
+
 # Nibbler
 
 "By far the best ICCF analysis tool for Leela." &mdash; *jhorthos*
