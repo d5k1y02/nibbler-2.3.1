@@ -1,5 +1,5 @@
 
-This is a modified version of nibbler for use with my piece type prediction algorithm. You can find the original here: https://github.com/rooklift/nibbler
+This is a modified version of nibbler for use with my piece type prediction algorithm. I did not create this ui, just modified it. You can find the original here: https://github.com/rooklift/nibbler
 
 
 
