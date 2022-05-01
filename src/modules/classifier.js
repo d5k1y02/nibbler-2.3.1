@@ -17,7 +17,7 @@ pyshell.send('hello');
 
 pyshell.on('message', function (message) {
   // received a message sent from the Python script (a simple "print" statement)
-  pred = parseInt(message[3])
+  pred = parseInt(message)
   console.log(message);
 });
 
